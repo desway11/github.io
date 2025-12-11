@@ -56,25 +56,25 @@ const closeButton = document.getElementById("closePlayer");
 const playlist = [];
 let currentTrackIndex = 0;
 
-// Добавьте сюда имена ваших MP3 файлов
+// Добавь сюда имена MP3 файлов
 const songFiles = ["meditaciya.mp3", "skrillex.mp3"];
 
-// Open/Close player
+
 openButton.addEventListener("click", () => {
   miniPlayer.classList.add("active");
   playAnimations();
 
   // --- ДОБАВЬ ЭТО ---
   if (playlist.length > 0) {
-    loadTrack(); // загрузить трек
-    audio.play(); // сразу начать проигрывание
+    loadTrack(); 
+    audio.play(); 
     updatePlayBtn();
   }
 });
 
 closeButton.addEventListener("click", () => {
   miniPlayer.classList.remove("active");
-  stopAnimations(); // ← остановить видео
+  stopAnimations(); 
   pianoBlock.classList.remove("active");
   audio.pause();
 });
@@ -89,7 +89,7 @@ function loadSongsFromFolder() {
   songFiles.forEach((song) => {
     playlist.push({
       name: song,
-      url: `/songs/${song}`,
+      url: `github.io/songs/${song}`,
     });
   });
 
@@ -98,7 +98,7 @@ function loadSongsFromFolder() {
   }
 }
 
-// Load songs on page load
+
 loadSongsFromFolder();
 
 function loadTrack() {
@@ -122,18 +122,18 @@ playBtn.addEventListener("click", () => {
     audio.play();
   } else {
     audio.pause();
+    stopAnimations()
   }
   updatePlayBtn();
 });
 const playIcon = document.getElementById("playIcon");
 
 function updatePlayBtn() {
-  // Меняем картинку
-  playIcon.src = audio.paused
-    ? "imgs/playsong.svg" // ▶️ — начало
-    : "imgs/pausesong.svg"; // ⏸️ — пауза
 
-  // Оставляем работу с классами
+  playIcon.src = audio.paused
+    ? "imgs/playsong.svg" 
+    : "imgs/pausesong.svg"; 
+
   playBtn.classList.toggle("paused", !audio.paused);
 }
 
@@ -165,7 +165,7 @@ audio.addEventListener("ended", () => {
   nextBtn.click();
 });
 
-// Initialize
+
 updatePlayBtn();
 
 const volumeSlider = document.getElementById("volumeControl");
@@ -176,4 +176,4 @@ function updateSliderValue() {
 }
 
 volumeSlider.addEventListener("input", updateSliderValue);
-updateSliderValue(); // инициализация
+updateSliderValue(); 
