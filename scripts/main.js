@@ -89,7 +89,7 @@ function loadSongsFromFolder() {
   songFiles.forEach((song) => {
     playlist.push({
       name: song,
-      url: `github.io/songs/${song}`,
+      url: `https://desway11.github.io/github.io/songs/${song}`,
     });
   });
 
@@ -177,3 +177,4 @@ function updateSliderValue() {
 
 volumeSlider.addEventListener("input", updateSliderValue);
 updateSliderValue(); 
+
