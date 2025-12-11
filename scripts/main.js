@@ -119,7 +119,8 @@ playBtn.addEventListener("click", () => {
   }
 
   if (audio.paused) {
-    audio.play();
+    audio.play(); 
+    playAnimations();
   } else {
     audio.pause();
     stopAnimations()
@@ -177,5 +178,6 @@ function updateSliderValue() {
 
 volumeSlider.addEventListener("input", updateSliderValue);
 updateSliderValue(); 
+
 
 
