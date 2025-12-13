@@ -522,11 +522,20 @@ body {
   z-index: 10;
   animation: none;
 }
-
+.gif {
+  display: none;
+}
 @media (max-width: 768px) {
   .vinyl-container {
     width: 400px;
     height: 260px;
+  }
+
+.anim-video:not(.gif),.arrow:not(.gif) {
+  display: none;
+}
+  .gif {
+    display: block;
   }
 
   .vinyl-container .arrow {

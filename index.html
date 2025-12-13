@@ -105,6 +105,7 @@
             <div class="note-block">
               <div class="text-animation">
                 <video class="anim-video" src="video/string.webm" loop></video>
+                <img class="anim-video gif" src="video/string.gif" alt="">
               </div>
             </div>
 
@@ -112,7 +113,9 @@
             <div class="vinyl-section">
               <div class="vinyl-container">
                 <video class="anim-video" src="video/vinil.webm" loop></video>
+                <img class="anim-video gif" src="video/vinil.gif" alt="">
                 <video class="arrow" src="video/arrow.webm" autoplay></video>
+                <img class="arrow gif" src="imgs/arrow.svg" alt="">
               </div>
             </div>
           </div>
@@ -336,8 +339,9 @@
       </div>
     </main>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-  const video = document.querySelector(".arrow");
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.querySelector("video.arrow"); // <- только видео
+  if (!video) return; // если видео нет, выходим
   video.pause();
 
   let duration = 0;
@@ -348,9 +352,9 @@
   let targetTime = 0;
   let currentTime = 0;
 
-  const speed = 2; // ← скорость появления
-  const smooth = 0.1; // ← плавность (0.05–0.1 оптимально)
-  const maxFPS = 120; // ← ограничение FPS для стабильности
+  const speed = 2;
+  const smooth = 0.1;
+  const maxFPS = 120;
 
   let lastFrame = 0;
 
@@ -379,6 +383,7 @@
     targetTime = progress * duration;
   });
 });
+
 
     </script>
 
@@ -466,9 +471,6 @@
 
       <!-- Close Button -->
       <button class="close-btn" id="closePlayer">✕</button>
-    </div>
-    <div class="piano-anim">
-      <video class="piano-video" src="video/pianino.webm" loop></video>
     </div>
 
     <img src="imgs/footer-background.png" alt="Задний фон" />

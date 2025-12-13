@@ -36,18 +36,16 @@ function createSnowflake(x, y) {
 
 function playAnimations() {
   document.querySelectorAll(".anim-video").forEach((v) => {
-    v.play();
+    if (v.tagName === "VIDEO") v.play();
   });
 }
 
 function stopAnimations() {
   document.querySelectorAll(".anim-video").forEach((v) => {
-    v.pause();
+    if (v.tagName === "VIDEO") v.pause();
   });
 }
 
-const pianoBlock = document.querySelector(".piano-anim");
-const pianoVideo = document.querySelector(".piano-video");
 
 const miniPlayer = document.getElementById("miniPlayer");
 const openButton = document.querySelector(".button");
@@ -75,7 +73,6 @@ openButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   miniPlayer.classList.remove("active");
   stopAnimations(); 
-  pianoBlock.classList.remove("active");
   audio.pause();
 });
 
