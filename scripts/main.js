@@ -55,7 +55,7 @@ const playlist = [];
 let currentTrackIndex = 0;
 
 // Добавь сюда имена MP3 файлов
-const songFiles = ["meditaciya.mp3", "skrillex.mp3"];
+const songFiles = ["d85429544f222f764.mp3", "c58a31bb74c09dbf6437.mp3", "bc4af589d2fedbe20.mp3", "Luminote_Rasslablyayucshaya_muzyka_-_Rasslablyayucshaya_Muzyka_dlya_Glubokogo_Sna_Spokojstviya_Meditacii_Rel_(SkySound.cc).mp3", "7169289bf87d0ff7.mp3", "4c524f.mp3", "1-11_-mice-on-venus.mp3", "1-08_-minecraft.mp3", "1-07_-haggstrom.mp3", "1-06_-moog-city.mp3", "1-05_-living-mice.mp3", "1-03_-subwoofer-lullaby.mp3", "1-01_-key.mp3"];
 
 
 openButton.addEventListener("click", () => {
@@ -175,6 +175,7 @@ function updateSliderValue() {
 
 volumeSlider.addEventListener("input", updateSliderValue);
 updateSliderValue(); 
+
 
 
 
